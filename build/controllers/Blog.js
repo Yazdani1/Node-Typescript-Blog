@@ -52,7 +52,7 @@ exports.createBlog = createBlog;
  */
 const getAllBlogPosts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const allBlogPosts = yield Blog_1.default.find({}).sort({ date: -1 });
+        const allBlogPosts = yield Blog_1.default.find({}).sort({ date: -1 }).limit(1);
         res.status(200).json(allBlogPosts);
     }
     catch (error) {

@@ -44,7 +44,7 @@ export const createBlog = async (req: Request, res: Response) => {
  */
 export const getAllBlogPosts = async (req: Request, res: Response) => {
   try {
-    const allBlogPosts = await Blog.find({}).sort({ date: -1 });
+    const allBlogPosts = await Blog.find({}).sort({ date: -1 }).limit(1);
 
     res.status(200).json(allBlogPosts);
   } catch (error) {
