@@ -4,7 +4,7 @@ require('dotenv').config();
 //"mongodb://0.0.0.0:27017/BlogTestTypescript"
 
 mongoose
-  .connect(process.env.localdb, {
+  .connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

@@ -14,10 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/v0', require('./routers/Blog'));
-// app.use('/api/v0', require('./routers/MachineOrders'));
 
 app.listen(port, () => {
   console.log('Server connected');
 });
-
-//    "dev": "nodemon src/app.ts",
