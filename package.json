@@ -1,0 +1,31 @@
+{
+  "name": "node-server-blog-typescript",
+  "version": "1.0.0",
+  "description": "Blog test project",
+  "main": "build/app.js",
+  "scripts": {
+    "start": "node build/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc --watch"
+  },
+  "author": "Yazdani Chowdhury",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.9",
+    "@types/nodemon": "^1.19.2",
+    "@types/uuid": "^9.0.3",
+    "typescript": "^5.2.2"
+  }
+}
