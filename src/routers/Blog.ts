@@ -1,5 +1,5 @@
 import { Router } from 'express';
-const { createBlog, getAllBlogPosts, getSingleBlogPost } = require('../controllers/Blog');
+const { createBlog, getAllBlogPosts, getSingleBlogPost, changeBlogProperty } = require('../controllers/Blog');
 
 const router = Router();
 /**
@@ -18,5 +18,11 @@ router.get('/all-blog-posts', getAllBlogPosts);
  */
 
 router.get('/single-blog/:slug', getSingleBlogPost);
+
+/**
+ * To change all the property together
+ */
+
+router.get('/change-field', changeBlogProperty);
 
 module.exports = router;

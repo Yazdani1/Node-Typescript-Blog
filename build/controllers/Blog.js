@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSingleBlogPost = exports.getAllBlogPosts = exports.createBlog = void 0;
+exports.changeBlogProperty = exports.getSingleBlogPost = exports.getAllBlogPosts = exports.createBlog = void 0;
 const uuid_1 = require("uuid");
 const Blog_1 = __importDefault(require("../models/Blog"));
 /**
@@ -74,3 +74,23 @@ const getSingleBlogPost = (req, res) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.getSingleBlogPost = getSingleBlogPost;
+/**
+ * To change all the property together
+ * @param req
+ * @param res
+ */
+const changeBlogProperty = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const allBlogs = yield Blog_1.default.find({}).sort({ date: -1 });
+        for (let blog of allBlogs) {
+            blog.active = false;
+            console.log(blog.active);
+            yield blog.save();
+        }
+        res.status(200).json(allBlogs);
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Something went wrong' });
+    }
+});
+exports.changeBlogProperty = changeBlogProperty;

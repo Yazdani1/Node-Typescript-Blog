@@ -65,3 +65,25 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Something went wrong' });
   }
 };
+
+/**
+ * To change all the property together
+ * @param req
+ * @param res
+ */
+export const changeBlogProperty = async (req: Request, res: Response) => {
+  try {
+    const allBlogs = await Blog.find({}).sort({ date: -1 });
+
+    for (let blog of allBlogs) {
+      blog.active = false;
+      console.log(blog.active);
+
+      await blog.save();
+    }
+
+    res.status(200).json(allBlogs);
+  } catch (error) {
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+};
