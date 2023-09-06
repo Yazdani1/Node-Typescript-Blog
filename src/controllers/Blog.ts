@@ -57,7 +57,7 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
     const singleBlogPost = await Blog.findOne(query);
 
     if (!singleBlogPost) {
-      return res.status(404).json({ error: 'Blog post could not found' });
+      return res.status(404).json({ error: 'Blog post could not found!' });
     }
 
     res.status(200).json(singleBlogPost);
@@ -81,10 +81,9 @@ export const changeBlogProperty = async (req: Request, res: Response) => {
 
     for (let blog of allBlogs) {
       blog.active = activef;
-      console.log(blog.active);
       await blog.save();
     }
-    
+
     res.status(200).json(allBlogs);
   } catch (error) {
     res.status(500).json({ error: 'Something went wrong' });

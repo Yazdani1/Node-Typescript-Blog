@@ -65,7 +65,7 @@ const getSingleBlogPost = (req, res) => __awaiter(void 0, void 0, void 0, functi
         const query = { slug: req.params.slug };
         const singleBlogPost = yield Blog_1.default.findOne(query);
         if (!singleBlogPost) {
-            return res.status(404).json({ error: 'Blog post could not found' });
+            return res.status(404).json({ error: 'Blog post could not found!' });
         }
         res.status(200).json(singleBlogPost);
     }
@@ -87,7 +87,6 @@ const changeBlogProperty = (req, res) => __awaiter(void 0, void 0, void 0, funct
         const allBlogs = yield Blog_1.default.find({}).sort({ date: -1 });
         for (let blog of allBlogs) {
             blog.active = activef;
-            console.log(blog.active);
             yield blog.save();
         }
         res.status(200).json(allBlogs);
