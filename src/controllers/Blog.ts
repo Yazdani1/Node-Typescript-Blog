@@ -68,20 +68,23 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
 
 /**
  * To change all the property together
+ * First get all the data from schema then using loop it change the Blog shcema proeprty
+ * Then it saves -  This way all the fileds can be updated all together
  * @param req
  * @param res
  */
 export const changeBlogProperty = async (req: Request, res: Response) => {
   try {
+    const { activef } = req.body;
+
     const allBlogs = await Blog.find({}).sort({ date: -1 });
 
     for (let blog of allBlogs) {
-      blog.active = false;
+      blog.active = activef;
       console.log(blog.active);
-
       await blog.save();
     }
-
+    
     res.status(200).json(allBlogs);
   } catch (error) {
     res.status(500).json({ error: 'Something went wrong' });

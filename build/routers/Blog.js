@@ -18,5 +18,5 @@ router.get('/single-blog/:slug', getSingleBlogPost);
 /**
  * To change all the property together
  */
-router.get('/change-field', changeBlogProperty);
+router.post('/change-field', changeBlogProperty);
 module.exports = router;

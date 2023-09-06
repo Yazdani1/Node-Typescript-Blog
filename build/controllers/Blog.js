@@ -76,14 +76,17 @@ const getSingleBlogPost = (req, res) => __awaiter(void 0, void 0, void 0, functi
 exports.getSingleBlogPost = getSingleBlogPost;
 /**
  * To change all the property together
+ * First get all the data from schema then using loop it change the Blog shcema proeprty
+ * Then it saves -  This way all the fileds can be updated all together
  * @param req
  * @param res
  */
 const changeBlogProperty = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const { activef } = req.body;
         const allBlogs = yield Blog_1.default.find({}).sort({ date: -1 });
         for (let blog of allBlogs) {
-            blog.active = false;
+            blog.active = activef;
             console.log(blog.active);
             yield blog.save();
         }
