@@ -1,5 +1,5 @@
 import { Router } from 'express';
-const { createBlog, getAllBlogPosts } = require('../controllers/Blog');
+const { createBlog, getAllBlogPosts, getSingleBlogPost } = require('../controllers/Blog');
 
 const router = Router();
 /**
@@ -12,5 +12,11 @@ router.post('/create-blog', createBlog);
  */
 
 router.get('/all-blog-posts', getAllBlogPosts);
+
+/**
+ * To get a single blog post
+ */
+
+router.get('/single-blog/:slug', getSingleBlogPost);
 
 module.exports = router;
