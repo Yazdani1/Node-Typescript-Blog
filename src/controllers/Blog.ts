@@ -71,6 +71,7 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
  * @param req
  * @param res
  */
+
 export const changeBlogProperty = async (req: Request, res: Response) => {
   try {
     const { activef } = req.body;
@@ -81,6 +82,7 @@ export const changeBlogProperty = async (req: Request, res: Response) => {
       blog.active = activef;
       await blog.save();
     }
+
     res.status(200).json(allBlogs);
   } catch (error) {
     res.status(500).json({ error: 'Something went wrong' });
