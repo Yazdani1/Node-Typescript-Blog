@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 const { createBlog, getAllBlogPosts, getSingleBlogPost, changeBlogProperty } = require('../controllers/Blog');
 
 const router = Router();
