@@ -3,9 +3,11 @@ import { Router } from 'express';
 const { createBlog, getAllBlogPosts, getSingleBlogPost, changeBlogProperty } = require('../controllers/Blog');
 
 const router = Router();
+
 /**
  * To create blog
  */
+
 router.post('/create-blog', createBlog);
 
 /**

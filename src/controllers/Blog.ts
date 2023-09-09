@@ -50,6 +50,7 @@ export const getAllBlogPosts = async (req: Request, res: Response) => {
  * @param res
  * @returns
  */
+
 export const getSingleBlogPost = async (req: Request, res: Response) => {
   try {
     const query = { slug: req.params.slug };
