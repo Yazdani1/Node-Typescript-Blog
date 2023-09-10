@@ -59,6 +59,7 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
     if (!singleBlogPost) {
       return res.status(404).json({ error: 'Blog post could not found!' });
     }
+
     res.status(200).json(singleBlogPost);
   } catch (error) {
     res.status(500).json({ error: 'Something went wrong' });

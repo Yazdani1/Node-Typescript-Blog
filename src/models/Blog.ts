@@ -14,6 +14,7 @@ const blogSchema: Schema<IBlog> = new Schema<IBlog>({
     type: String,
     required: true,
   },
+
   des: {
     type: String,
     required: true,
