@@ -56,6 +56,7 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
     const query = { slug: req.params.slug };
 
     const singleBlogPost = await Blog.findOne(query);
+
     if (!singleBlogPost) {
       return res.status(404).json({ error: 'Blog post could not found!' });
     }
