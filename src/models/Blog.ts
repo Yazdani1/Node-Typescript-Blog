@@ -14,30 +14,25 @@ const blogSchema: Schema<IBlog> = new Schema<IBlog>({
     type: String,
     required: true,
   },
-
   des: {
     type: String,
     required: true,
   },
-
   active: {
     type: Boolean,
     required: true,
     default: false,
   },
-
   users: {
     type: [String],
     required: true,
   },
-
   slug: {
     type: String,
     lowercase: true,
     unique: true,
     index: true,
   },
-
   date: {
     type: Date,
     default: Date.now,
