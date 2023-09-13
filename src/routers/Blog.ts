@@ -11,7 +11,9 @@ const router = Router();
 router.post('/create-blog', createBlog);
 
 /**
+ *
  * To get all the blog post lists
+ *
  */
 
 router.get('/all-blog-posts', getAllBlogPosts);
