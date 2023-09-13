@@ -70,8 +70,11 @@ export const getSingleBlogPost = async (req: Request, res: Response) => {
 
 /**
  * To change all the property together
+ *
  * First get all the data from schema then using loop it change the Blog shcema proeprty
+ *
  * Then it saves -  This way all the fileds can be updated all together
+ *
  * @param req
  * @param res
  */
