@@ -25,19 +25,16 @@ const blogSchema: Schema<IBlog> = new Schema<IBlog>({
     required: true,
     default: false,
   },
-
   users: {
     type: [String],
     required: true,
   },
-
   slug: {
     type: String,
     lowercase: true,
     unique: true,
     index: true,
   },
-
   date: {
     type: Date,
     default: Date.now,

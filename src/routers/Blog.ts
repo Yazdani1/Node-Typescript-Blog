@@ -19,7 +19,9 @@ router.post('/create-blog', createBlog);
 router.get('/all-blog-posts', getAllBlogPosts);
 
 /**
+ *
  * To get a single blog post
+ *
  */
 
 router.get('/single-blog/:slug', getSingleBlogPost);
