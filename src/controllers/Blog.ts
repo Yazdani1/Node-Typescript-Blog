@@ -22,7 +22,6 @@ export const createBlog = async (req: Request, res: Response) => {
     };
 
     const saveBlog = await Blog.create(blogDetails);
-
     res.status(201).json(saveBlog);
   } catch (error) {
     res.status(500).json({ error: 'Something went wrong' });
@@ -37,11 +36,14 @@ export const createBlog = async (req: Request, res: Response) => {
 
 export const getAllBlogPosts = async (req: Request, res: Response) => {
   try {
+
     const allBlogPosts: IBlog[] = await Blog.find({}).sort({ date: -1 });
 
     res.status(200).json(allBlogPosts);
   } catch (error) {
+
     res.status(500).json({ error: 'Something went wrong' });
+    
   }
 };
 
